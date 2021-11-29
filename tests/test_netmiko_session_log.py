@@ -136,7 +136,7 @@ def test_logging_filter_secrets(net_connect_slog_wr):
     nc = net_connect_slog_wr
     # setup logger to output to file
     file_name = nc.session_log.file_name
-    netmikologger = logging.getLogger('netmiko')
+    netmikologger = logging.getLogger("netmiko")
     netmikologger.setLevel(logging.DEBUG)
     file_handler = logging.FileHandler(file_name)
     file_handler.setLevel(logging.DEBUG)
@@ -145,7 +145,7 @@ def test_logging_filter_secrets(net_connect_slog_wr):
     nc.session_log = None
     # cleanup the log file
     with open(file_name, "w") as f:
-        f.write('')
+        f.write("")
 
     # run sequence
     nc.enable()
